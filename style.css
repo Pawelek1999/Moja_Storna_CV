@@ -9,10 +9,11 @@ body {
 }
 
 header {
+
     text-align: left;
     margin-bottom: 40px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap: 20px;
     
@@ -53,12 +54,14 @@ header {
 .layout {
     display: grid;
     align-items: start;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 13fr 19fr;
     grid-template-rows: auto;
+    grid-auto-flow: row dense;
     gap: 20px;
 }
 
 .left-column {
+    
     grid-column: 1;
     margin-right: 20px;
 }
