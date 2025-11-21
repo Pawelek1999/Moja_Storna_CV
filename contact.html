@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navigationbar">
+        <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="about_me.html">O mnie</a>
+                <a href="contact.html">Kontakt</a>
+        </nav>
+    </div>
+    <h1>Contact Me</h1>
+    <form id="Contact_form" action="https://formspree.io/f/mwpzeewy" method="POST">
+    <div class="layout">
+       <div>
+            <div>
+                <label class="info_label">
+                    Your email:
+                    <input name="email" placeholder="Wpisz swoje email..." aria-label="Wpisz swoje email" required></textarea>
+                </label>
+            </div>
+            <div>
+                <label class="info_label">
+                    Your name:
+                    <input name="name" placeholder="Wpisz swoje imie..." aria-label="Wpisz swoje imie"></textarea>
+                </label>
+            </div>
+            <div>
+                <label class="info_label">
+                    Your surname:
+                    <input name="surname" placeholder="Wpisz swoje nazwisko..." aria-label="Wpisz swoje nazwisko"></textarea>
+                </label>
+            </div>
+            <div>
+                <label class="info_label">
+                    Your phone number:
+                    <input name="phone_number" placeholder="Wpisz swój numer telefonu..." aria-label="Wpisz swój numer telefonu"></textarea>
+                </label>
+            </div>
+        </div>
+        <div>
+            <label id="message_label">
+                Your message:
+                <textarea name="message" placeholder="Wyslij mi wiadomość..." aria-label="Wyslij mi wiadomość"></textarea>
+            </label>
+        </div>
+    </div>
+    
+    <div class="button"><button type="submit" style="padding: 12px 24px;">Send</button></div>
+
+    </form>
+</body>
+</html>
