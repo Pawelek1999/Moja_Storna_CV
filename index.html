@@ -12,10 +12,21 @@
 
     <div id="navigationbar">
         <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="about_me.html">O mnie</a>
-                <a href="contact.html">Kontakt</a>
-                <a href="easter_egg.html">MOJ ULUBIONY ZWIERZAK</a>
+                <li class="nav_item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav_item">
+                    <a href="about_me.html">O mnie</a>
+                </li>
+
+                <li class="nav_item_with_submenu nav_item_with_submenu--has-submenu">
+                    <a href="contact.html" class="nav_link">Kontakt</a>
+                    <button class="nav_button"></button>
+                    <ul class="nav_submenu">
+                        <li><a href="contact.html">Formularz kontaktowy</a></li>
+                        <li><a href="contact.html" target="_blank">Formularz kontaktowy</a>
+                    </ul>
+                </li>
         </nav>
     </div>
     <header>
@@ -173,10 +184,13 @@
                 </section>
             </div>
         </div>
+    </main>
 
     <footer>
         <p>&copy; 
             Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z
 Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. <br>2025 Jakub Pawełek</br></p>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
