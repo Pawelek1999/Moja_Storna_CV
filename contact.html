@@ -6,14 +6,29 @@
     <title>Contact me</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="navigationbar">
-        <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="about_me.html">O mnie</a>
-                <a href="contact.html">Kontakt</a>
-        </nav>
+        <div id="navigationbar">
+            <nav class="navbar">
+                        <li class="nav_item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="nav_item_with_submenu nav_item_with_submenu--has-submenu">
+                            <a href="about_me.html">O mnie</a>
+                            <button class="nav_button"></button>
+                            <ul class="nav_submenu">
+                                <li><a href="Literatura.html">Literatura</a></li>
+                                <li><a href="sport.html">Sport</a></li>
+                                <li><a href="New_tech.html">Nowoczesne technologie</a>
+                            </ul>
+                        </li>
+                        <li class="nav_item">
+                            <a href="contact.html" class="nav_link">Kontakt</a>
+                        </li>
+                    
+            </nav>
     </div>
+
     <h1>Contact Me</h1>
     <form id="Contact_form" action="https://formspree.io/f/mwpzeewy" method="POST">
         <div class="layout">
@@ -27,13 +42,13 @@
                 <div>
                     <label class="info_label">
                         Your name:
-                        <input name="name" placeholder="Wpisz swoje imie..." aria-label="Wpisz swoje imie"></textarea>
+                        <input name="name" placeholder="Wpisz swoje imie i nazwisko..." aria-label="Wpisz swoje imie i nazwisko"></textarea>
                     </label>
                 </div>
                 <div>
                     <label class="info_label">
-                        Your surname:
-                        <input name="surname" placeholder="Wpisz swoje nazwisko..." aria-label="Wpisz swoje nazwisko"></textarea>
+                        Your company name:
+                        <input name="company_name" placeholder="Wpisz nazwę swojej firmy..." aria-label="Wpisz nazwę swojej firmy"></textarea>
                     </label>
                 </div>
                 <div>
