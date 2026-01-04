@@ -1,0 +1,4 @@
+Dodac paginacje do karuzeli
+
+CZym jest DOM?
+

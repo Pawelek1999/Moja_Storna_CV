@@ -114,3 +114,20 @@ document.addEventListener("DOMContentLoaded", () => {
   update();
   restartAuto();
 });
+
+//Intersection Observer - animacje przewijania
+const section = document.querySelectorAll('.Fish_Image,.Sport_Image');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('show');
+  } else {
+    entry.target.classList.remove('show');
+  }});
+}, {threshold: 0, rootMargin: "0px 0px -100px 0px"});
+
+section.forEach(section => {
+  observer.observe(section);
+});
+
+console.log(section);
