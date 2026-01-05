@@ -4,6 +4,7 @@
     --light-gray: #F2F3F5;  /* jasnoszary (tło) sidebar*/
     --text-main: #1E1E1E;   /* główny tekst */
     --text-muted: #555555; /* tekst drugorzędny */
+    --white: #FFFFFF;
     --books-per-view: 3;
     --books-gap: 1em;
     --books-margin: 10px;
@@ -21,6 +22,10 @@ p,a,li,span,div {
     line-height: 1.5;
     color: var(--text-main);
     
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 /* Navigation Bar Styles */
@@ -89,16 +94,34 @@ p,a,li,span,div {
 }
 
 .nav_button {
-    background: red;
-    cursor: pointer;
-    height: 70%;
-    width: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: var(--navy);
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition:
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.3s cubic-bezier(.2,.8,.2,1);
 }
+
+/* ===== HOVER ===== */
+.nav_button:hover {
+  color: var(--light-gray);
+  background-color: var(--green);
+  box-shadow: 0 0 10px var(--green);
+  transform: rotate(180deg);
+}
+
+
 
 .nav_submenu {
     display: none;
     position: absolute;
-    background-color: var(--light-gray);
+    background-color: var(--white);
     position: absolute;
     top: 100%;
     left: 0;
@@ -118,12 +141,74 @@ p,a,li,span,div {
     display: block;
 }
 
+.nav_item--open .nav_button {
+  color: var(--light-gray);
+  background-color: var(--green);
+  box-shadow: 0 0 10px var(--green);
+  transform: rotate(180deg);
+}
+
 .navbar_list {
     list-style: none;
 }
 
 /* Navigation Bar Styles END */
 
+
+/* index */
+/* ===== SKILLS SECTION ===== */
+.skills-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  border: 2px solid var(--green);
+  border-radius: 16px;
+  background-color: var(--white);
+
+  box-shadow: inset 0px 2px 10px var(--green);
+}
+
+.skills-section h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--navy);
+  font-size: 2rem;
+}
+
+/* ===== SINGLE SKILL ===== */
+.skill {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.skill span {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress {
+  width: 100%;
+  height: 10px;
+  background-color: var(--light-gray);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--navy);
+}
+
+.progress-fill {
+  height: 100%;
+  width: var(--level);
+  background-color: var(--green);
+  border-radius: 999px;
+  transition: width 0.8s cubic-bezier(.2,.8,.2,1);
+}
+
+/* index end */
 
 body {
   min-height: 100vh;
@@ -134,6 +219,7 @@ body {
   );
   color: #1F2A44;
   margin: 0;
+
 }
 
 
@@ -177,7 +263,7 @@ main {
     align-items: start;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
-    grid-auto-flow: row dense;
+    grid-auto-flow: row dense;  
 }
 
 .fade-line {
@@ -306,9 +392,11 @@ main {
     border-radius: 8px;
     border: 0.5px solid var(--green);
     margin-bottom: 20px;
+    background-color: var(--white);
 }
 
 .table_style {
+    
     border-collapse: collapse;
     width: 100%;
     box-shadow: inset 0px 2px 10px var(--green); /*przesuniecieX przesuniecieY rozmycie rozprzestrzenienie kolor */
@@ -323,33 +411,113 @@ main {
     box-shadow: inset 0 0 2px var(--green);
 }
 
-#Message_label{
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: var(--green);
+/* About me */
+/* ====== MAIN LAYOUT ====== */
+.About_me_main{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 34px 16px 70px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  align-items: start;
 }
 
-.button {
-    text-align: center;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+/* ====== SECTIONS (CARDS) ====== */
+.About_me_main section{
+  background: #fff;
+  border: 1px solid rgba(31, 42, 68, 0.14);
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: 0 10px 24px rgba(31, 42, 68, 0.08);
+  overflow: hidden;
 }
 
-input {
-    padding: 4px;
-    width: 100%;
-    
+/* delikatny hover */
+.About_me_main section:hover{
+  border-color: rgba(31, 94, 75, 0.35);
+  box-shadow: 0 14px 34px rgba(31, 42, 68, 0.12);
 }
 
-textarea {
-    width: 100%;
-    height: 171.02px;
-    resize: vertical; 
+/* ====== HEADINGS ====== */
+.About_me_main h2{
+  margin: 0 0 14px;
+  color: var(--navy);
+  font-size: 1.45rem;
+  letter-spacing: 0.2px;
+  position: relative;
+  padding-bottom: 10px;
 }
+
+/* kreska pod nagłówkiem */
+.About_me_main h2::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 84px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--green);
+  opacity: 0.9;
+}
+
+/* ====== ABOUT TEXT ====== */
+#About_Me{
+  grid-column: 1 / -1; /* na desktopie szeroko przez 2 kolumny */
+}
+
+#About_Me p{
+  margin: 0;
+  color: rgba(31, 42, 68, 0.86);
+  line-height: 1.75;
+  font-size: 0.98rem;
+}
+
+/* ====== LISTS ====== */
+.About_me_main ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  gap: 10px;
+}
+
+.About_me_main li{
+  background: var(--light-gray);
+  border: 1px solid rgba(31, 42, 68, 0.10);
+  border-radius: 12px;
+
+  padding: 10px 12px 10px 38px;
+  color: rgba(31, 42, 68, 0.90);
+  line-height: 1.45;
+
+  position: relative;
+}
+
+/* bullet jako zielona kropka */
+.About_me_main li::before{
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(31, 94, 75, 0.14);
+}
+
+/* wyróżnienia w certyfikatach */
+#Courses_and_Certificates strong{
+  color: var(--navy);
+}
+
+
+/* About me */
 
 /* Books list */
 
@@ -386,7 +554,7 @@ textarea {
         "desc  desc   desc";
     height: 550px;
     padding: 5px;
-    background-color: var(--light-gray);
+    background-color: var(--white);
     border-radius: 8px;
     margin: var(--books-margin);
     box-shadow: 0 2px 5px var(--green);
@@ -462,13 +630,20 @@ textarea {
 
 /* Sports */
 
+.Ju_Jitsu_Photos,
+.Marathon_section,
+.Bike_section,
+.Fish_section{
+  overflow: hidden;
+}
+
 .Ju_Jitsu_Photos{
     display: grid;
     grid-template-areas: 
         "nazwa nazwa nazwa"
         "Photo1 paragraph1 Photo2"
         "Photo3 paragraph2 paragraph2";
-    background-color: var(--light-gray);
+    background-color: var(--white);
     border-radius: 8px;
     margin: var(--books-margin);
     box-shadow: 0 2px 5px var(--green);
@@ -500,7 +675,7 @@ textarea {
         "nazwa nazwa nazwa nazwa"
         "Photo1 paragraph1 paragraph1 paragraph1"
         "Photo1 Photo2 Photo2 Photo2 ";
-    background-color: var(--light-gray);
+    background-color: var(--white);
     border-radius: 8px;
     margin: var(--books-margin);
     box-shadow: 0 2px 8px var(--green);
@@ -509,7 +684,7 @@ textarea {
     padding: 20px;
 }
 
-#Marathon_photo{
+.Marathon_section img{
   width: 100%;
   height: 100%;
   max-height: 600px;          /* żeby zdjęcia miały „kartowy” wygląd */
@@ -518,15 +693,78 @@ textarea {
   border-radius: 12px;
 }
 
+.Bike_section{
+    display: grid;
+    grid-template-areas: 
+        "nazwa nazwa nazwa nazwa"
+        "Photo1 Photo1 paragraph1 paragraph1"
+        "Photo2 Photo2 Photo3 Photo3 "
+        "nazwa2 nazwa2 nazwa2 nazwa2 "
+        "Photo4 Photo4 paragraph2 paragraph2 "
+        "Photo4 Photo4 Photo5 paragraph3 "
+        "Photo4 Photo4 Photo5 paragraph3 ";
+    background-color: var(--white);
+    border-radius: 8px;
+    margin: var(--books-margin);
+    box-shadow: 0 2px 8px var(--green);
+    transition: transform 0.3s, box-shadow 0.3s;
+    gap: 10px;
+    padding: 20px;
+}
+
+.Bike_section img{
+  width: 100%;
+  height: 100%;
+  max-height: 900px;          /* żeby zdjęcia miały „kartowy” wygląd */
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+#Bike_photo{
+  width: 100%;
+  height: 100%;
+  max-height: 220px;          /* żeby zdjęcia miały „kartowy” wygląd */
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.Fish_section{
+    display: grid;
+    grid-template-areas: 
+        "nazwa nazwa"
+        "paragraph paragraph"
+        "Photo1 Photo2";
+    background-color: var(--white);
+    border-radius: 8px;
+    margin: var(--books-margin);
+    box-shadow: 0 2px 5px var(--green);
+    transition: transform 0.3s, box-shadow 0.3s;
+    gap: 10px;
+    padding: 20px;
+}
+
+.Fish_section img{
+  width: 100%;
+  height: 100%;
+  max-height: 950px;         /* żeby zdjęcia miały „kartowy” wygląd */
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  scale: 0.9;
+}
+
 /* TEKST spada z góry */
-.text-drop{
+.text-drop,.text-drop-bike{
   opacity: 0;
   transform: translateY(-40px);
   transition: transform 1.7s cubic-bezier(.2,.8,.2,1), opacity 0.9s ease;
   will-change: transform, opacity;
 }
 
-.text-drop.show{
+
+.text-drop.show,.text-drop-bike.show{
   opacity: 1;
   transform: translateY(0);
 }
@@ -544,15 +782,30 @@ textarea {
     opacity: 1;
 }
 
+.photo-offset {
+  transform: none;
+}
+
+/* TEKST wyjezdza z prawej */
+.text-slide-right, .text-slide-right-index{
+    transform: translateX(50%);
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(.2,.8,.2,1), opacity 1s ease-in-out;
+}
+
+.text-slide-right.show, .text-slide-right-index.show{
+    transform: translateX(0%);
+    opacity: 1;
+}
 /* PHOTO 1 i 2 – pojawiają się obracając */
-.photo-rotate{
+.photo-rotate,.photo-rotate-bike{
   opacity: 0;
   transform: rotate(-120deg) scale(0.92);
   transition: transform 1.5s cubic-bezier(.2,.8,.2,1), opacity 0.9s ease;
   will-change: transform, opacity;
 }
 
-.photo-rotate.show{
+.photo-rotate.show,.photo-rotate-bike.show{
   opacity: 1;
   transform: rotate(0deg) scale(1);
 }
@@ -570,6 +823,133 @@ textarea {
   transform: translateX(0);
 }
 
+/* Contact me */
+
+.Contact_space{
+    display: grid;
+    grid-template-areas: 
+        "title form"
+        "text1 form"
+        "text2 form "
+        "info form"
+        "info form";
+    grid-template-columns: 1fr 3fr;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    margin: var(--books-margin);
+    box-shadow: 0 2px 5px var(--green);
+    transition: transform 0.3s, box-shadow 0.3s;
+    gap: 10px;
+    padding: 20px;
+    overflow: hidden;
+    
+}
+
+.Contact_space p{
+    color: var(--text-muted);
+}
+
+.Contact_space form{
+    justify-items: cover;
+}
+
+.Message_label{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--green);
+}
+
+.button_form {
+    text-align: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.Contact_space form{
+  width: 100%;
+  background: var(--white);
+  border-radius: 14px;
+  padding: 22px;
+  border: 1px solid rgba(31, 42, 68, 0.08);
+  box-shadow: 0 14px 30px rgba(31, 42, 68, 0.08);
+}
+
+/* ====== LABELS ====== */
+.info_label,
+.message_label{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* ====== INPUTS / TEXTAREA ====== */
+input,
+textarea{
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+
+  font-size: 0.95rem;
+  font-family: inherit;
+
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color: #9ca3af;
+}
+
+/* Focus */
+input:focus,
+textarea:focus{
+  outline: none;
+  border-color: var(--green);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(31, 94, 75, 0.15);
+}
+
+/* Wysokość wiadomości — kontrolowana, żeby nie robiła ogromnej dziury */
+textarea{
+  min-height: 210px;
+  resize: vertical;
+}
+
+/* ====== BUTTON ====== */
+.button_form{
+  margin-top: 16px;
+  display: flex;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.button_form:hover{
+  background: #174a3a;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(31, 94, 75, 0.25);
+}
+
+.button_form:active{
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(31, 94, 75, 0.22);
+}
 
 /* Animations */
 @keyframes arrow-move {
@@ -584,6 +964,28 @@ textarea {
     100% { background-position: 0% 50%; }
 }
 
+/* ====== RESPONSYWNOŚĆ (telefon) ====== */
+
+/* ====== SPORT ====== */
+@media (max-width: 768px){
+  .Ju_Jitsu_Photos{
+    grid-template-areas:
+      "nazwa"
+      "Photo1"
+      "paragraph1"
+      "Photo2"
+      "Photo3"
+      "paragraph2";
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .Sport_Image{
+    max-height: 200px;
+  }
+}
+
+/* ====== HOME ====== */
 @media (max-width: 768px) {
   .floating-pointer {
     top: 240px;
@@ -600,21 +1002,57 @@ textarea {
   }
 }
 
-/* ====== RESPONSYWNOŚĆ (telefon) ====== */
-@media (max-width: 768px){
-  .Ju_Jitsu_Photos{
-    grid-template-areas:
-      "nazwa"
-      "Photo1"
-      "paragraph1"
-      "Photo2"
-      "Photo3"
-      "paragraph2";
-    grid-template-columns: 1fr;
-    padding: 14px;
+@media (max-width: 600px) {
+  .skills-section {
+    padding: 28px 16px;
   }
 
-  .Sport_Image{
-    max-height: 200px;
+  .skills-section h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ====== KONTAKT ====== */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px){
+  .Contact_space{
+    grid-template-areas:
+      "title"
+      "text1"
+      "text2"
+      "info"
+      "form";
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+}
+
+
+/* ====== About me ====== */
+
+@media (max-width: 900px){
+  .About_me_main{
+    grid-template-columns: 1fr;
+    padding: 28px 14px 56px;
+  }
+
+  #About_Me{
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 600px){
+  .About_me_main section{
+    padding: 18px 16px;
+    border-radius: 12px;
+  }
+
+  .About_me_main h2{
+    font-size: 1.25rem;
   }
 }

@@ -116,18 +116,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Intersection Observer - animacje przewijania
-const section = document.querySelectorAll('.text-slide-left, .text-drop, .photo-slide-left, .photo-rotate');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting){
-      entry.target.classList.add('show');
-  } else {
-    entry.target.classList.remove('show');
-  }});
-}, {threshold: 0.4, rootMargin: "0px 0px -100px 0px"});
+function createObserver(selector, options) {
+  const section = document.querySelectorAll(selector);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }});
+  }, options);
 
-section.forEach(section => {
-  observer.observe(section);
-});
+  section.forEach(section => {
+    observer.observe(section);
+  });
+}
 
-console.log(section);
+createObserver('.text-slide-left, .text-drop, .photo-slide-left, .photo-rotate, .text-slide-right', {threshold: 0.4});
+createObserver('.text-drop-bike, .photo-rotate-bike.show', {threshold: 0.1, rootMargin: "0px 0px -100px 0px"});
+createObserver('.text-slide-right-index', {threshold: 0});

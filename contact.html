@@ -15,11 +15,11 @@
                         </li>
                         <li class="nav_item_with_submenu nav_item_with_submenu--has-submenu">
                             <a href="about_me.html">O mnie</a>
-                            <button class="nav_button"></button>
+                            <button class="nav_button">▼</button>
                             <ul class="nav_submenu">
                                 <li><a href="Literatura.html">Literatura</a></li>
                                 <li><a href="sport.html">Sport</a></li>
-                                <li><a href="Projects.html">Projekty</a>
+                                
                             </ul>
                         </li>
                         <li class="nav_item">
@@ -29,45 +29,61 @@
             </nav>
     </div>
 
-    <h1>Contact Me</h1>
-    <form id="Contact_form" action="https://formspree.io/f/mwpzeewy" method="POST">
-        <div class="layout">
-        <div>
-                <div>
-                    <label class="info_label">
-                        Your email:
-                        <input name="email" placeholder="Wpisz swoj email..." aria-label="Wpisz swoje email" required></textarea>
-                    </label>
-                </div>
-                <div>
-                    <label class="info_label">
-                        Your name:
-                        <input name="name" placeholder="Wpisz swoje imie i nazwisko..." aria-label="Wpisz swoje imie i nazwisko"></textarea>
-                    </label>
-                </div>
-                <div>
-                    <label class="info_label">
-                        Your company name:
-                        <input name="company_name" placeholder="Wpisz nazwę swojej firmy..." aria-label="Wpisz nazwę swojej firmy"></textarea>
-                    </label>
-                </div>
-                <div>
-                    <label class="info_label">
-                        Your phone number:
-                        <input name="phone_number" placeholder="Wpisz swój numer telefonu..." aria-label="Wpisz swój numer telefonu"></textarea>
-                    </label>
-                </div>
-            </div>
-            <div>
-                <label id="message_label">
-                    Your message:
-                    <textarea name="message" placeholder="Wyslij mi wiadomość..." aria-label="Wyslij mi wiadomość"></textarea>
-                </label>
-            </div>
-        </div>
-        
-        <div class="button"><button type="submit" style="padding: 12px 24px;">Send</button></div>
+    <section class="Contact_space text-drop">
+        <h1 style="grid-area: title;">Contact Me</h1>
+        <p style="grid-area: text1;">I'd love to hear from you!</p>
+        <p style="grid-area: text2;">If you have any questions, suggestions, or just want to say hello, feel free to reach out to me using the contact information below or by filling out the contact form. I look forward to hearing from you!</p>
+        <ul class="contact-list" style="grid-area: info;">
+                        <li>
+                            <img class="icon" src="image/email.png" alt="emial icon">
+                            Email: name.surname@gmail.com
+                        </li>
+                        <li>
+                            <img class="icon" src="image/phone.png" alt="phone icon">
+                            Phone: +48 ??? ??? ???
+                        </li>
+        </ul>
 
-    </form>
+        <div style="grid-area: form;">
+  <form action="https://formspree.io/f/mwpzeewy" method="POST">
+    <div class="layout">
+      <div>
+        <label class="info_label">
+          Your email:
+          <input name="email" placeholder="Wpisz swoj email..." aria-label="Wpisz swoje email" required>
+        </label>
+
+        <label class="info_label">
+          Your name:
+          <input name="name" placeholder="Wpisz swoje imie i nazwisko..." aria-label="Wpisz swoje imie i nazwisko">
+        </label>
+
+        <label class="info_label">
+          Your company name:
+          <input name="company_name" placeholder="Wpisz nazwę swojej firmy..." aria-label="Wpisz nazwę swojej firmy">
+        </label>
+
+        <label class="info_label">
+          Your phone number:
+          <input name="phone_number" placeholder="Wpisz swój numer telefonu..." aria-label="Wpisz swój numer telefonu">
+        </label>
+      </div>
+
+      <div>
+        <label class="message_label">
+          Your message:
+          <textarea name="message" placeholder="Wyślij mi wiadomość..." aria-label="Wyślij mi wiadomość"></textarea>
+        </label>
+      </div>
+    </div>
+
+    <div >
+      <button class="button_form" type="submit" style="padding: 12px 24px;">Send</button>
+    </div>
+  </form>
+</div>
+    </section>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

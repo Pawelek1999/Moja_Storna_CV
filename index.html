@@ -16,11 +16,11 @@
                         </li>
                         <li class="nav_item_with_submenu nav_item_with_submenu--has-submenu">
                             <a href="about_me.html">O mnie</a>
-                            <button class="nav_button"></button>
+                            <button class="nav_button">▼</button>
                             <ul class="nav_submenu">
                                 <li><a href="Literatura.html">Literatura</a></li>
                                 <li><a href="sport.html">Sport</a></li>
-                                <li><a href="Projects.html">Projekty</a>
+                                
                             </ul>
                         </li>
                         <li class="nav_item">
@@ -34,7 +34,7 @@
         
         <div id="Line">
             <h1>Witaj na mojej stronie!</h1>
-            <div class="fade-line"></div>
+            <div class="fade-line text-slide-left"></div>
             <p>Witam Cię na mojej stronie — miejscu, w którym opowiadam trochę o sobie, moim życiu zawodowym oraz pasjach, które wypełniają moją codzienność.
                 Znajdziesz tu zarówno informacje o mojej pracy i doświadczeniu, jak i o tym, co lubię robić po godzinach.
                 Rozgość się i poznaj mnie lepiej! 😊</p>
@@ -75,8 +75,8 @@
         <div class="layout">
             <div class="right-column">
                 <section id="Experience">
-                    <h2>Experience</h2>
-                    <div class="table_wrapper">
+                    <h2 class="text-slide-right-index">Experience</h2>
+                    <div class="table_wrapper text-slide-right-index">
                         <table class="table_style">
                             <th>Date</th>
                             <th>Position</th>
@@ -114,8 +114,8 @@
                 </section>
 
                 <section id="Education">
-                    <h2>Education</h2>
-                    <div class="table_wrapper">
+                    <h2 class="text-slide-right-index">Education</h2>
+                    <div class="table_wrapper   text-slide-right-index">
                         <table class="table_style">
                             <th>Date</th>
                             <th>Degree</th>
@@ -143,45 +143,64 @@
             </div>
 
             <div class="left-column">
-                <section id="Skills">
-                    <h2>Skills</h2>
-                    <ul>
-                        <li>ISTQB 4.0 — Poziom Podstawowy</li>
-                        <li>Prawo jazdy kat. B</li>
-                        <li>Siemens Teamcenter, Jira</li>
-                        <li>Podstawy: Python, Java, JavaScript, HTML, CSS, React</li>
-                        <li>Manualne testy oprogramowania</li>
-                        <li>Praktyczne wykorzystanie narzędzi AI w pracy i projektach</li>
-                        <li>Podstawy Postman</li>
-                        <li>Znajomość interfejsów API (FastAPI)</li>
-                    </ul>
-                </section>
+                <section id="Skills" class="skills-section text-slide-left">
+                <h2>Skills</h2>
 
-                <section id="Langueges">
-                    <h2>Langueges</h2>
-                    <ul>
-                        <li>English</li>
-                        <li>Polish</li>
-                    </ul>
-                </section>
+                <div class="skill">
+                    <span>ISTQB 4.0 — Poziom Podstawowy</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 80%"></div>
+                    </div>
+                </div>
 
-                <section class="left-column" id="Courses_and_Certificates">
-                    <h2>Courses and Certificates</h2>
-                    <ul>
-                        <li><strong>ISTQB® Poziomu Podstawowego (v4.0)</strong></li>
-                        <li><strong>Kursy Udemy</strong> — od bibliotek i OOP po praktyczne zastosowania (Python, Java, JavaScript)</li>
-                        <li><strong>SEP (G1)</strong></li>
-                    </ul>
-                </section>
+                <div class="skill">
+                    <span>Prawo jazdy kat. B</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 90%"></div>
+                    </div>
+                </div>
 
-                <section id="Hobbys">
-                    <h2>Hobbys</h2>
-                    <ul>
-                        <li>Siłownia</li>
-                        <li>Brazylijskie Jiu-Jitsu</li>
-                        <li>Literatura</li>
-                        <li>Nowoczesne technologie</li>
-                    </ul>
+                <div class="skill">
+                    <span>Siemens Teamcenter, Jira</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 70%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <span>Python, Java, JavaScript, HTML, CSS, React</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 65%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <span>Manualne testy oprogramowania</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 75%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <span>Wykorzystanie narzędzi AI</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <span>Postman</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 60%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <span>API / FastAPI</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 55%"></div>
+                    </div>
+                </div>
                 </section>
             </div>
         </div>
