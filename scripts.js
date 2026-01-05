@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Intersection Observer - animacje przewijania
-const section = document.querySelectorAll('.Fish_Image,.Sport_Image');
+const section = document.querySelectorAll('.text-slide-left, .text-drop, .photo-slide-left, .photo-rotate');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting){
@@ -124,7 +124,7 @@ const observer = new IntersectionObserver((entries) => {
   } else {
     entry.target.classList.remove('show');
   }});
-}, {threshold: 0, rootMargin: "0px 0px -100px 0px"});
+}, {threshold: 0.4, rootMargin: "0px 0px -100px 0px"});
 
 section.forEach(section => {
   observer.observe(section);
