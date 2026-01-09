@@ -1132,8 +1132,6 @@ textarea{
             "desc";
         grid-template-columns: 1fr;
         height: auto;
-
-        max-height: 1vh;
     }
     
     .Book_cover {
