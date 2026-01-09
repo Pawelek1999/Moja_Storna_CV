@@ -132,6 +132,6 @@ function createObserver(selector, options) {
   });
 }
 
-createObserver('.text-slide-left, .text-drop, .photo-slide-left, .photo-rotate, .text-slide-right', {threshold: 0.4});
+createObserver('.text-slide-left, .text-drop, .photo-slide-left, .photo-rotate, .text-slide-right', {threshold: 0.2});
 createObserver('.text-drop-bike, .photo-rotate-bike.show, .skills-slide-left', {threshold: 0.1});
 createObserver('.text-slide-right-index', {threshold: 0.2});

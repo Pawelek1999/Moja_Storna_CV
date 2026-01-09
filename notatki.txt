@@ -2,3 +2,6 @@ Dodac paginacje do karuzeli
 
 CZym jest DOM?
 
+
+Telefon:
+Znacznik przy submenu sie nie odwraca, jak kliknie sie o mnie, powinno byc tez tak ze jak klikne gdzies indziej to zamyka submenu

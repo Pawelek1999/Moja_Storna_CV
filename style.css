@@ -312,6 +312,8 @@ main {
     transition: transform 0.3s;
 }
 
+
+
 #Contact_Information{
     justify-self: end;
     align-self: center;
@@ -1079,6 +1081,14 @@ textarea{
 
 }
 
+@media (hover: none) {
+  .icon:active {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0px 5px var(--green));
+    transition: transform 0.3s;
+  }
+}
+
 @media (max-width: 600px) {
   .skills-section {
     padding: 28px 16px;
@@ -1122,6 +1132,8 @@ textarea{
             "desc";
         grid-template-columns: 1fr;
         height: auto;
+
+        max-height: 1vh;
     }
     
     .Book_cover {
