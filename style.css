@@ -1056,3 +1056,99 @@ textarea{
     font-size: 1.25rem;
   }
 }
+/* ====== RESPONSIVE UPDATES FOR MOBILE ====== */
+@media (max-width: 768px) {
+    /* Header & Navigation */
+    .header_index {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .table_header_rows {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #Profilowe {
+        margin: 0 auto;
+    }
+
+    #Contact_Information {
+        justify-self: center;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .contact-list li {
+        justify-content: center;
+    }
+
+    .Media_section {
+        justify-self: center;
+    }
+
+    /* Literature */
+    :root {
+        --books-per-view: 1;
+    }
+
+    .Book_item {
+        grid-template-areas:
+            "okladka"
+            "release"
+            "author"
+            "desc";
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .Book_cover {
+        justify-content: center;
+    }
+
+    /* Sport Sections */
+    .Marathon_section {
+        grid-template-areas:
+            "nazwa"
+            "paragraph1"
+            "Photo1"
+            "Photo2";
+        grid-template-columns: 1fr;
+    }
+
+    .Bike_section {
+        grid-template-areas:
+            "nazwa"
+            "paragraph1"
+            "Photo1"
+            "Photo2"
+            "Photo3"
+            "nazwa2"
+            "paragraph2"
+            "paragraph3"
+            "Photo4"
+            "Photo5";
+        grid-template-columns: 1fr;
+    }
+
+    .Fish_section {
+        grid-template-areas:
+            "nazwa"
+            "paragraph"
+            "Photo1"
+            "Photo2";
+        grid-template-columns: 1fr;
+    }
+
+    /* Image adjustments */
+    .Marathon_section img,
+    .Bike_section img,
+    .Fish_section img {
+        max-height: 300px;
+    }
+}
