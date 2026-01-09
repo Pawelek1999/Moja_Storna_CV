@@ -8,39 +8,37 @@
 </head>
 
 <body>
-        <div id="navigationbar">
-            <nav class="navbar">
-                        <li class="nav_item">
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li class="nav_item_with_submenu nav_item_with_submenu--has-submenu">
-                            <a href="about_me.html">O mnie</a>
-                            <button class="nav_button">▼</button>
-                            <ul class="nav_submenu">
-                                <li><a href="Literatura.html">Literatura</a></li>
-                                <li><a href="sport.html">Sport</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li class="nav_item">
-                            <a href="contact.html" class="nav_link">Kontakt</a>
-                        </li>
-                    
-            </nav>
-    </div>
+        <div class="navigationbar">
+        <nav class="navbar">
+            <ul class="navbar_list">
+            <li class="nav_item"><a href="index.html">Home</a></li>
 
+            <li class="nav_item_with_submenu nav_item_with_submenu--has-submenu">
+                <a href="about_me.html">O mnie</a>
+                <button class="nav_button" type="button">▼</button>
+
+                <ul class="nav_submenu">
+                <li><a href="Literatura.html">Literatura</a></li>
+                <li><a href="sport.html">Sport</a></li>
+                </ul>
+            </li>
+
+            <li class="nav_item"><a href="contact.html" class="nav_link">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
     <section class="Contact_space text-drop">
-        <h1 style="grid-area: title;">Contact Me</h1>
-        <p style="grid-area: text1;">I'd love to hear from you!</p>
-        <p style="grid-area: text2;">If you have any questions, suggestions, or just want to say hello, feel free to reach out to me using the contact information below or by filling out the contact form. I look forward to hearing from you!</p>
+        <h1 style="grid-area: title;">Kontakt</h1>
+        <p style="grid-area: text1;">Czekam na twoją wiadomość!</p>
+        <p style="grid-area: text2;">Jeśli masz pytania, sugestie lub po prostu chcesz się przywitać, skontaktuj się ze mną, korzystając z poniższych danych lub wypełniając formularz kontaktowy. Czekam na Twoją wiadomość!</p>
         <ul class="contact-list" style="grid-area: info;">
                         <li>
                             <img class="icon" src="image/email.png" alt="emial icon">
-                            Email: name.surname@gmail.com
+                            Email: jakub.pawelek99@gmail.com
                         </li>
                         <li>
                             <img class="icon" src="image/phone.png" alt="phone icon">
-                            Phone: +48 ??? ??? ???
+                            Telefon: +48 ??? ??? ???
                         </li>
         </ul>
 
@@ -49,29 +47,29 @@
     <div class="layout">
       <div>
         <label class="info_label">
-          Your email:
+          Emial:
           <input name="email" placeholder="Wpisz swoj email..." aria-label="Wpisz swoje email" required>
         </label>
 
         <label class="info_label">
-          Your name:
+          Imie i nazwisko:
           <input name="name" placeholder="Wpisz swoje imie i nazwisko..." aria-label="Wpisz swoje imie i nazwisko">
         </label>
 
         <label class="info_label">
-          Your company name:
+          Nazwa firmy:
           <input name="company_name" placeholder="Wpisz nazwę swojej firmy..." aria-label="Wpisz nazwę swojej firmy">
         </label>
 
         <label class="info_label">
-          Your phone number:
+          Numer telefonu:
           <input name="phone_number" placeholder="Wpisz swój numer telefonu..." aria-label="Wpisz swój numer telefonu">
         </label>
       </div>
 
       <div>
         <label class="message_label">
-          Your message:
+          Wiadomość:
           <textarea name="message" placeholder="Wyślij mi wiadomość..." aria-label="Wyślij mi wiadomość"></textarea>
         </label>
       </div>

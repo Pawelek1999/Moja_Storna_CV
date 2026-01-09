@@ -31,7 +31,8 @@ p,a,li,span,div {
 /* Navigation Bar Styles */
 
 .navbar {  
-    position: sticky;
+    background: transparent;
+    width: 100%;
     top: 0;
     z-index: 1000;
     background-color: var(--light-gray);
@@ -39,6 +40,7 @@ p,a,li,span,div {
     justify-content: center;
     gap: 40px;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 .navbar a {
@@ -53,7 +55,6 @@ p,a,li,span,div {
 
 .navbar li {
     list-style: none;
-    display: inline-block;
     position: relative;
 }
 
@@ -61,10 +62,12 @@ p,a,li,span,div {
     text-decoration: underline;
 }
 
-#navigationbar {
+.navigationbar {
     position: sticky; 
     top: 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.342);
+    left: 0;
+    right: 0;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.342);
     background: linear-gradient(
   270deg,
   #1F2A44, /* granat */
@@ -77,6 +80,8 @@ p,a,li,span,div {
 );
     animation: gradientMove 10s ease infinite;
     z-index: 1000;
+    width: 100%;
+    overflow: visible;
 }
 
 .nav_item_with_submenu {
@@ -148,8 +153,15 @@ p,a,li,span,div {
   transform: rotate(180deg);
 }
 
-.navbar_list {
-    list-style: none;
+.navbar_list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 }
 
 /* Navigation Bar Styles END */
@@ -309,7 +321,7 @@ main {
 .floating-pointer {
     position: absolute;
     top: 220px;      
-    right: 180px;    
+    right: 220px;    
     display: flex;
     align-items: center;
     gap: 10px;
@@ -337,13 +349,6 @@ main {
     justify-self: end;
     align-self: center;
     gap: 10px;
-}
-
-#About_Me {
-    font-size: 18px;
-    line-height: 1.6;
-    color: var(--navys);
-
 }
 
 .contact-list {
@@ -377,8 +382,7 @@ main {
     gap: 20px;
 }
 
-.left-column {
-    
+.left-column {  
     grid-column: 1;
     margin-right: 20px;
 }
@@ -414,14 +418,12 @@ main {
 /* About me */
 /* ====== MAIN LAYOUT ====== */
 .About_me_main{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 34px 16px 70px;
-
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 18px;
-  align-items: start;
+    display: grid;
+    align-items: start;
+    grid-template-columns: 13fr 19fr;
+    grid-template-rows: auto;
+    grid-auto-flow: row dense;
+    gap: 20px;
 }
 
 /* ====== SECTIONS (CARDS) ====== */
@@ -664,8 +666,6 @@ main {
   width: 100%;
   height: 100%;
   max-height: 220px;          /* żeby zdjęcia miały „kartowy” wygląd */
-  object-fit: cover;
-  display: block;
   border-radius: 12px;
 }
 
@@ -771,13 +771,13 @@ main {
 
 /* TEKST wyjezdza z lewej */
 
-.text-slide-left{
+.text-slide-left, .skills-slide-left{
     transform: translateX(-50%);
     opacity: 0;
     transition: transform 1.2s cubic-bezier(.2,.8,.2,1), opacity 1s ease-in-out;
 }
 
-.text-slide-left.show{
+.text-slide-left.show, .skills-slide-left.show{
     transform: translateX(0%);
     opacity: 1;
 }
@@ -789,7 +789,7 @@ main {
 /* TEKST wyjezdza z prawej */
 .text-slide-right, .text-slide-right-index{
     transform: translateX(50%);
-    opacity: 0;
+    opacity: 0 ;
     transition: transform 1.2s cubic-bezier(.2,.8,.2,1), opacity 1s ease-in-out;
 }
 
@@ -965,7 +965,42 @@ textarea{
 }
 
 /* ====== RESPONSYWNOŚĆ (telefon) ====== */
+@media (max-width: 768px) {
+    /* Header & Navigation */
+    .header_index {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
+    .table_header_rows {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #Profilowe {
+        margin: 0 auto;
+    }
+
+    #Contact_Information {
+        justify-self: center;
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .contact-list li {
+        justify-content: center;
+    }
+    
+    .Media_section {
+        justify-self: center;
+    }
+
+}
 /* ====== SPORT ====== */
 @media (max-width: 768px){
   .Ju_Jitsu_Photos{
@@ -978,28 +1013,70 @@ textarea{
       "paragraph2";
     grid-template-columns: 1fr;
     padding: 14px;
+    place-items: center;
   }
 
   .Sport_Image{
     max-height: 200px;
   }
+
+  .Marathon_section {
+        grid-template-areas: 
+            "nazwa"
+            "paragraph1"
+            "Photo1"
+            "Photo2";
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+
+    .Bike_section {
+        grid-template-areas: 
+            "nazwa"
+            "paragraph1"
+            "Photo1"
+            "Photo2"
+            "Photo3"
+            "nazwa2"
+            "paragraph2"
+            "paragraph3"
+            "Photo4"
+            "Photo5";
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+
+    .Fish_section {
+        grid-template-areas: 
+            "nazwa"
+            "paragraph"
+            "Photo1"
+            "Photo2";
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+
+
+    .Marathon_section img, 
+    .Bike_section img, 
+    .Fish_section img,
+    .Sport_Image { 
+        max-height: 300px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+
 }
 
 /* ====== HOME ====== */
 @media (max-width: 768px) {
   .floating-pointer {
-    top: 240px;
-    right: 120px;
-    transform: rotate(-20deg);
+    opacity: 0;
   }
 
-  .pointer-text {
-    font-size: 24px;
-  }
 
-  .pointer-arrow {
-    font-size: 34px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -1010,6 +1087,48 @@ textarea{
   .skills-section h2 {
     font-size: 1.6rem;
   }
+
+  .layout {
+    display: grid;
+    align-items: start;
+    grid-template-columns: 13fr 19fr;
+    grid-template-rows: auto;
+    grid-auto-flow: row dense;
+    gap: 20px;
+}
+
+.left-column {
+    
+    grid-column: 1;
+    margin-right: 20px;
+}
+
+.right-column {
+    grid-column: 1;
+}
+}
+
+/* ====== Literatura ====== */
+@media (max-width: 768px) {
+  :root {
+    --books-per-view: 1;
+  }
+
+   .Book_item {
+        grid-template-areas: 
+            "okladka"
+            "release"
+            "author"
+            "desc";
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .Book_cover {
+        justify-content: center;
+    }
+
+
 }
 
 /* ====== KONTAKT ====== */
@@ -1019,7 +1138,7 @@ textarea{
   }
 }
 
-@media (max-width: 900px){
+@media (max-width: 768px){
   .Contact_space{
     grid-template-areas:
       "title"
@@ -1035,7 +1154,7 @@ textarea{
 
 /* ====== About me ====== */
 
-@media (max-width: 900px){
+@media (max-width: 768px){
   .About_me_main{
     grid-template-columns: 1fr;
     padding: 28px 14px 56px;
@@ -1044,6 +1163,8 @@ textarea{
   #About_Me{
     grid-column: auto;
   }
+
+
 }
 
 @media (max-width: 600px){

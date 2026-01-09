@@ -9,25 +9,24 @@
 </head>
 
 <body>
-    <div id="navigationbar">
-            <nav class="navbar">
-                        <li class="nav_item">
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li class="nav_item_with_submenu nav_item_with_submenu--has-submenu">
-                            <a href="about_me.html">O mnie</a>
-                            <button class="nav_button">▼</button>
-                            <ul class="nav_submenu">
-                                <li><a href="Literatura.html">Literatura</a></li>
-                                <li><a href="sport.html">Sport</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li class="nav_item">
-                            <a href="contact.html" class="nav_link">Kontakt</a>
-                        </li>
-                    
-            </nav>
+    <div class="navigationbar">
+        <nav class="navbar">
+            <ul class="navbar_list">
+            <li class="nav_item"><a href="index.html">Home</a></li>
+
+            <li class="nav_item_with_submenu nav_item_with_submenu--has-submenu">
+                <a href="about_me.html">O mnie</a>
+                <button class="nav_button" type="button">▼</button>
+
+                <ul class="nav_submenu">
+                <li><a href="Literatura.html">Literatura</a></li>
+                <li><a href="sport.html">Sport</a></li>
+                </ul>
+            </li>
+
+            <li class="nav_item"><a href="contact.html" class="nav_link">Kontakt</a></li>
+            </ul>
+        </nav>
     </div>
         
     <header class="header_index">
@@ -35,7 +34,7 @@
         <div id="Line">
             <h1>Witaj na mojej stronie!</h1>
             <div class="fade-line text-slide-left"></div>
-            <p>Witam Cię na mojej stronie — miejscu, w którym opowiadam trochę o sobie, moim życiu zawodowym oraz pasjach, które wypełniają moją codzienność.
+            <p>To miejsce, w którym opowiadam trochę o sobie, moim życiu zawodowym oraz pasjach, które wypełniają moją codzienność.
                 Znajdziesz tu zarówno informacje o mojej pracy i doświadczeniu, jak i o tym, co lubię robić po godzinach.
                 Rozgość się i poznaj mnie lepiej! 😊</p>
         </div>
@@ -44,21 +43,21 @@
             <section id="Contact_Information">
                 <h2>Jakub Pawełek</h2>
                 <p>Software Validation Engineer</p>
-                <h2>Contact Information</h2>
+                <h2>Kontakt</h2>
                     <ul class="contact-list">
                         <li>
                             <img class="icon" src="image/email.png" alt="emial icon">
-                            Email: name.surname@gmail.com
+                            Email: jakub.pawelek99@gmail.com
                         </li>
                         <li>
                             <img class="icon" src="image/phone.png" alt="phone icon">
-                            Phone: +48 ??? ??? ???
+                            Telefon: +48 ??? ??? ???
                         </li>
                     </ul>
             </section>
             <section class="Media_section">
                 <div class="floating-pointer">
-                    <span class="pointer-text">CLICK HERE</span>
+                    <span class="pointer-text">KLIKNIJ</span>
                     <span class="pointer-arrow">➜</span>
                 </div>
                 <a href="https://github.com/Pawelek1999" target="_blank" class="icon_link">
@@ -75,11 +74,11 @@
         <div class="layout">
             <div class="right-column">
                 <section id="Experience">
-                    <h2 class="text-slide-right-index">Experience</h2>
+                    <h2 class="text-slide-right-index">Doświadczenie</h2>
                     <div class="table_wrapper text-slide-right-index">
                         <table class="table_style">
-                            <th>Date</th>
-                            <th>Position</th>
+                            <th>Okres</th>
+                            <th>Stanowisko</th>
                             <tr>
                                 <td>2025-04 - obecnie</td>
                                 <td>
@@ -114,12 +113,12 @@
                 </section>
 
                 <section id="Education">
-                    <h2 class="text-slide-right-index">Education</h2>
+                    <h2 class="text-slide-right-index">Edukacja</h2>
                     <div class="table_wrapper   text-slide-right-index">
                         <table class="table_style">
-                            <th>Date</th>
-                            <th>Degree</th>
-                            <th>Institution</th>
+                            <th>Okres</th>
+                            <th>Stopień</th>
+                            <th>Instytucja</th>
                             <tr>
                                 <td>2023-02 - 2024-09</td>
                                 <td>Automatyka i Robotyka, Magister Inżynier</td>
@@ -143,18 +142,11 @@
             </div>
 
             <div class="left-column">
-                <section id="Skills" class="skills-section text-slide-left">
-                <h2>Skills</h2>
+                <section id="Skills" class="skills-section skills-slide-left ">
+                <h2>Umiejętności</h2>
 
                 <div class="skill">
                     <span>ISTQB 4.0 — Poziom Podstawowy</span>
-                    <div class="progress">
-                    <div class="progress-fill" style="--level: 80%"></div>
-                    </div>
-                </div>
-
-                <div class="skill">
-                    <span>Prawo jazdy kat. B</span>
                     <div class="progress">
                     <div class="progress-fill" style="--level: 90%"></div>
                     </div>
@@ -163,21 +155,49 @@
                 <div class="skill">
                     <span>Siemens Teamcenter, Jira</span>
                     <div class="progress">
+                    <div class="progress-fill" style="--level: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <span>Python</span>
+                    <div class="progress">
                     <div class="progress-fill" style="--level: 70%"></div>
                     </div>
                 </div>
 
                 <div class="skill">
-                    <span>Python, Java, JavaScript, HTML, CSS, React</span>
+                    <span>Java</span>
                     <div class="progress">
-                    <div class="progress-fill" style="--level: 65%"></div>
+                    <div class="progress-fill" style="--level: 30%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <span>HTML, CSS</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 70%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <span>JavaScript</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 55%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <span>React</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 30%"></div>
                     </div>
                 </div>
 
                 <div class="skill">
                     <span>Manualne testy oprogramowania</span>
                     <div class="progress">
-                    <div class="progress-fill" style="--level: 75%"></div>
+                    <div class="progress-fill" style="--level: 90%"></div>
                     </div>
                 </div>
 
@@ -191,7 +211,7 @@
                 <div class="skill">
                     <span>Postman</span>
                     <div class="progress">
-                    <div class="progress-fill" style="--level: 60%"></div>
+                    <div class="progress-fill" style="--level: 20%"></div>
                     </div>
                 </div>
 
@@ -201,16 +221,18 @@
                     <div class="progress-fill" style="--level: 55%"></div>
                     </div>
                 </div>
+
+                <div class="skill">
+                    <span>KNX, ETS 6</span>
+                    <div class="progress">
+                    <div class="progress-fill" style="--level: 80%"></div>
+                    </div>
+                </div>
                 </section>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 
-            Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z
-Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. <br>2025 Jakub Pawełek</br></p>
-    </footer>
 
     <script src="scripts.js"></script>
 </body>
